@@ -8,37 +8,37 @@ export class PostFeed extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            count : 0
+            count: 0
         };
     }
-   likeCounter=()=>{
+    likeCounter = () => {
         this.setState(
-           { count:this.state.count+1}
+            { count: this.state.count + 1 }
         )
-    
+
     }
     render() {
 
 
-        const{post}=this.props
+        const { post } = this.props
         return (
             <div>
-             
-    <ul> 
-     {post.map(item =>
-                    <ul>
-                        Email:{item.email}<br />
-                        Posturl:<img src={item.post} /><br />
-                        Caption:{item.caption}<br />
-                        <Comment />
-                        <button type="submit" onClick={()=>this.likeCounter()}>Like</button>
-                       {this.state.count}
-                       
-                    </ul>)}
+
+                <ul>
+                    {post.map(item =>
+                        <ul>
+                            {item.email} posted an post
+                           <img alt="" src={item.post} /><br />
+                            {item.caption}<br />
+                            <Comment />
+                            <button type="submit" className="button1" onClick={() => this.likeCounter()}>Like</button>
+                            {this.state.count}
+
+                        </ul>)}
 
 
                 </ul>
-             
+
             </div>
         )
     }
