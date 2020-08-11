@@ -31,8 +31,8 @@ export class PostFeed extends Component {
                            <img alt="" src={item.post} /><br />
                             {item.caption}<br />
                             <Comment />
-                            <button type="submit" className="button1" onClick={() => this.likeCounter()}>Like</button>
-                            {this.state.count}
+                            <button type="submit" className="button1" onClick={() => this.likeCounter()}>Like {this.state.count}</button>
+                            
 
                         </ul>)}
 
